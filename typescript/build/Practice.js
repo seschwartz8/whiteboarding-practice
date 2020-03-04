@@ -1,23 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Practice = /** @class */ (function () {
-    function Practice(parameter) {
-        this.parameter = parameter;
+var flip = function (input) {
+    // Reverses string
+    var outputArray = [];
+    for (var i = input.length - 1; i >= 0; i--) {
+        outputArray.push(input[i]);
     }
-    Practice.prototype.method = function (thing) {
-        return;
-    };
-    Object.defineProperty(Practice.prototype, "length", {
-        get: function () {
-            return 1;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return Practice;
-}());
-exports.Practice = Practice;
-function practiceFunction() {
-    // WRITE STUFF HERE
-}
-exports.practiceFunction = practiceFunction;
+    return outputArray.join('');
+};
+exports.flip = flip;
+var factorial = function (num) {
+    // Returns the factorial between 1 to 18
+    if (num == 0)
+        return 1;
+    return num * factorial(num - 1);
+};
+exports.factorial = factorial;

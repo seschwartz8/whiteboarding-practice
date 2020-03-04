@@ -1,17 +1,16 @@
-class Practice {
-  constructor(public parameter: string) {}
-
-  method(thing: number): void {
-    return;
+const flip = (input: string): string => {
+  // Reverses string
+  let outputArray: string[] = [];
+  for (let i = input.length - 1; i >= 0; i--) {
+    outputArray.push(input[i]);
   }
+  return outputArray.join('');
+};
 
-  get length(): number {
-    return 1;
-  }
-}
+const factorial = (num: number): number => {
+  // Returns the factorial between 1 to 18
+  if (num == 0) return 1;
+  return num * factorial(num - 1);
+};
 
-function practiceFunction(): void {
-  // WRITE STUFF HERE
-}
-
-export { Practice, practiceFunction };
+export { flip, factorial };
