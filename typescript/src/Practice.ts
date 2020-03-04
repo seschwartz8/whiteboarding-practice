@@ -13,4 +13,27 @@ const factorial = (num: number): number => {
   return num * factorial(num - 1);
 };
 
-export { flip, factorial };
+const cipher = (str: string): string => {
+  // Replace letters with next alphabet letter then capitalize every vowel
+  let newLetters: string[] = [];
+  for (let letter of str) {
+    let code: number = letter.charCodeAt(0);
+    let newCode: number = code;
+    if ((code < 90 && code > 64) || (code < 122 && code > 96)) {
+      newCode = code + 1;
+    } else if (code == 90) {
+      newCode = 65;
+    } else if (code == 122) {
+      newCode = 97;
+    }
+    let raisedLetter: string = String.fromCharCode(newCode);
+    const lowerVowels: string[] = ['a', 'e', 'i', 'o', 'u'];
+    if (lowerVowels.includes(raisedLetter)) {
+      raisedLetter = raisedLetter.toUpperCase();
+    }
+    newLetters.push(raisedLetter);
+  }
+  return newLetters.join('');
+};
+
+export { flip, factorial, cipher };
