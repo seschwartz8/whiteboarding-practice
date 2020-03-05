@@ -4,15 +4,17 @@ using System.Collections.Generic;
 public class Program
 {
 
-  public static double sumAverage(int[] arr1, int[] arr2)
+  public static double sumAverage(int[][] arr)
   {
-    int sum = 0;
-    int totalLength = arr1.Length + arr2.Length;
-    foreach (int num in arr1)
+    List<int> combinedList = new List<int>();
+    foreach (int[] intArray in arr)
     {
-      sum += num;
+      combinedList.AddRange(intArray);
     }
-    foreach (int num in arr2)
+    int[] combinedArr = combinedList.ToArray();
+    int sum = 0;
+    int totalLength = combinedArr.Length;
+    foreach (int num in combinedArr)
     {
       sum += num;
     }
@@ -25,7 +27,8 @@ public class Program
   {
     int[] arr1 = { 3 };
     int[] arr2 = { 2 };
-    double result = sumAverage(arr1, arr2);
+    int[][] arr = { arr1, arr2 };
+    double result = sumAverage(arr);
     Console.WriteLine(result);
   }
 }
