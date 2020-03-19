@@ -1,3 +1,16 @@
+const isPrime = (num: number): boolean => {
+  num = Math.abs(num);
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
 const flip = (input: string): string => {
   // Reverses string
   let outputArray: string[] = [];
@@ -36,4 +49,4 @@ const cipher = (str: string): string => {
   return newLetters.join('');
 };
 
-export { flip, factorial, cipher };
+export { isPrime, flip, factorial, cipher };

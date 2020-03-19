@@ -1,5 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var isPrime = function (num) {
+    num = Math.abs(num);
+    if (num <= 1) {
+        return false;
+    }
+    for (var i = 2; i < num; i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+};
+exports.isPrime = isPrime;
 var flip = function (input) {
     // Reverses string
     var outputArray = [];
