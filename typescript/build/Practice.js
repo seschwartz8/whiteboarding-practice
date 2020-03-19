@@ -1,5 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var getGCM = function (num1, num2) {
+    // Return greatest common multiple of two numbers (greatest number they're both divisible by)
+    var multiples = getMultiples(num1).concat(getMultiples(num2));
+    multiples.sort(function (a, b) {
+        return b - a;
+    });
+    for (var i = 0; i < multiples.length - 1; i++) {
+        if (multiples[i] == multiples[i + 1]) {
+            return multiples[i];
+        }
+    }
+    return 1;
+};
+exports.getGCM = getGCM;
 var getMultiples = function (num) {
     var multiples = [];
     if (num == 0)

@@ -1,3 +1,17 @@
+const getGCM = (num1: number, num2: number): number => {
+  // Return greatest common multiple of two numbers (greatest number they're both divisible by)
+  let multiples: number[] = getMultiples(num1).concat(getMultiples(num2));
+  multiples.sort((a, b) => {
+    return b - a;
+  });
+  for (let i = 0; i < multiples.length - 1; i++) {
+    if (multiples[i] == multiples[i + 1]) {
+      return multiples[i];
+    }
+  }
+  return 1;
+};
+
 const getMultiples = (num: number): number[] => {
   let multiples: number[] = [];
   if (num == 0) multiples.push(num);
@@ -58,4 +72,4 @@ const cipher = (str: string): string => {
   return newLetters.join('');
 };
 
-export { getMultiples, isPrime, flip, factorial, cipher };
+export { getGCM, getMultiples, isPrime, flip, factorial, cipher };
