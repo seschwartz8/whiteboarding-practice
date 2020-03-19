@@ -1,5 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var getMultiples = function (num) {
+    var multiples = [];
+    if (num == 0)
+        multiples.push(num);
+    for (var i = 1; i <= num; i++) {
+        if (num % i == 0)
+            multiples.push(i);
+    }
+    return multiples;
+};
+exports.getMultiples = getMultiples;
 var isPrime = function (num) {
     num = Math.abs(num);
     if (num <= 1) {

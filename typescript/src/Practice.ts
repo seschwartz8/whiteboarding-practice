@@ -1,3 +1,12 @@
+const getMultiples = (num: number): number[] => {
+  let multiples: number[] = [];
+  if (num == 0) multiples.push(num);
+  for (let i = 1; i <= num; i++) {
+    if (num % i == 0) multiples.push(i);
+  }
+  return multiples;
+};
+
 const isPrime = (num: number): boolean => {
   num = Math.abs(num);
   if (num <= 1) {
@@ -49,4 +58,4 @@ const cipher = (str: string): string => {
   return newLetters.join('');
 };
 
-export { isPrime, flip, factorial, cipher };
+export { getMultiples, isPrime, flip, factorial, cipher };
